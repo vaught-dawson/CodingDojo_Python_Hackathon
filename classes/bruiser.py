@@ -1,8 +1,13 @@
+import random
 from classes.character import Character
 
 
 class Bruiser(Character):
-    def __init__(self, name, strength, speed, health):
+
+    def __init__(self, name):
+        strength = random.randint(16, 24)
+        speed = random.randint(8,16)
+        health = random.randint(90, 120)
         super().__init__(name, strength, speed, health)
 
     def Info(self):
