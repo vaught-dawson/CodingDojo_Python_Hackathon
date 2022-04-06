@@ -1,11 +1,14 @@
 from classes.bruiser import Bruiser
 from classes.frenchie import Frenchie
 from classes.mermaid import Mermaid
+from classes.enemy import Enemy
 
 print("Welcome to the Dojo, fight different members to prove your strength!")
+# Get player name as an input
 player_name = input("Enter your name: ")
 player_object = None
 
+# Get a valid class option from the player as an input
 is_invalid_class = True
 player_class = ''
 while is_invalid_class:
@@ -34,4 +37,4 @@ while is_invalid_class:
         case _:
             print('Please enter a valid class name or number!')
 
-player_object.show_stats()
+e1 = Enemy()
