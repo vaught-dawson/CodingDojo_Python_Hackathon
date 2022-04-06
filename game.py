@@ -41,10 +41,13 @@ e1 = Enemy()
 
 print(f'Enemy {e1.name} has appeared!')
 still_alive = True
+# Loop to do rounds (Unfinished)
 while still_alive:
     print('Abilities:')
     invalid_move = True
+    # Loop to do check valid ability choice (Unfinished)
     while invalid_move:
+        # Accidentally used global static variable
         abilities = player_object.all_abilities
         for ability in abilities:
             print(f'- {ability}')
