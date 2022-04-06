@@ -12,7 +12,7 @@ class Enemy:
         self.name = self.get_random_name()
         rand_class = self.choose_random_class()
         self.class_type = rand_class(self.name)
-        self.class_type.info()
+        self.class_type.show_stats()
 
     @staticmethod
     def get_random_name():

@@ -3,16 +3,21 @@ from classes.character import Character
 
 
 class Mermaid(Character):
+    abilities = {}
 
     def __init__(self, name):
         strength = random.randint(20, 24)
         speed = random.randint(15, 23)
         health = random.randint(90, 150)
         super().__init__(name, strength, speed, health)
-        self.all_abilities['Sea Call'] = self.sea_call
-        self.all_abilities['Shimmer'] = self.shimmer
-        self.all_abilities['Tail Slap'] = self.tail_slap
-        self.all_abilities['Basic Attack'] = self.attack
+        if not self.abilities:
+            self.add_abilities()
+
+    def add_abilities(self):
+        self.abilities['Sea Call'] = self.sea_call
+        self.abilities['Shimmer'] = self.shimmer
+        self.abilities['Tail Slap'] = self.tail_slap
+        self.abilities['Basic Attack'] = self.attack
 
     def show_stats(self):
         print(

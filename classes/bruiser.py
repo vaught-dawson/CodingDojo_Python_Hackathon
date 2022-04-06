@@ -3,17 +3,22 @@ from classes.character import Character
 
 
 class Bruiser(Character):
+    abilities = {}
 
     def __init__(self, name):
         strength = random.randint(16, 24)
         speed = random.randint(16, 20)
         health = random.randint(90, 120)
         super().__init__(name, strength, speed, health)
-        self.all_abilities['Body Slam'] = self.body_slam
-        self.all_abilities['Heavy Fist'] = self.heavy_fist
-        self.all_abilities[
+        if not self.abilities:
+            self.add_abilities()
+
+    def add_abilities(self):
+        self.abilities['Body Slam'] = self.body_slam
+        self.abilities['Heavy Fist'] = self.heavy_fist
+        self.abilities[
             'Attitude Adjustment'] = self.attitude_adjustment
-        self.all_abilities['Blood Thirsty'] = self.blood_thirsty
+        self.abilities['Blood Thirsty'] = self.blood_thirsty
 
     def info(self):
         print(f"******  {self.name}  ******")

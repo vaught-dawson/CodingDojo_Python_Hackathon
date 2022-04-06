@@ -3,16 +3,21 @@ from classes.character import Character
 
 
 class Frenchie(Character):
+    abilities = {}
 
     def __init__(self, name):
         strength = random.randint(8, 16)
         speed = random.randint(18, 24)
         health = random.randint(80, 120)
         super().__init__(name, strength, speed, health)
-        self.all_abilities['Lick to Death'] = self.lick_to_death
-        self.all_abilities['Fart Cloud'] = self.fart_cloud
-        self.all_abilities['Zoomies'] = self.zoomies
-        self.all_abilities['Bite Leg Off'] = self.bite_leg_off
+        if not self.abilities:
+            self.add_abilities()
+
+    def add_abilities(self):
+        self.abilities['Lick to Death'] = self.lick_to_death
+        self.abilities['Fart Cloud'] = self.fart_cloud
+        self.abilities['Zoomies'] = self.zoomies
+        self.abilities['Bite Leg Off'] = self.bite_leg_off
 
     def info(self):
         print(f"***** (self.name) *****")

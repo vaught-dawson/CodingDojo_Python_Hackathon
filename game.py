@@ -48,7 +48,7 @@ while still_alive:
     # Loop to do check valid ability choice (Unfinished)
     while invalid_move:
         # Accidentally used global static variable
-        abilities = player_object.all_abilities
+        abilities = player_object.abilities
         for ability in abilities:
             print(f'- {ability}')
         input_ability = input('What ability would you like to use?\n')
