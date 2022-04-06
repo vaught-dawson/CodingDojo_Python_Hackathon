@@ -30,7 +30,8 @@ class Character:
             print(
                 f'{victim.name} takes {damage} damage! {victim.health} health remaining')
         else:
-            print(f'{victim.names} wards off the attack from {self.name}!')
+            print(
+                f'{victim.name} wards off the attack from {self.name}! ({attack_roll} attack vs {defense_roll} defense)')
         return self
 
     @staticmethod
