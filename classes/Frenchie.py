@@ -1,11 +1,10 @@
-class Frenchie:
+from character import Character
+
+class Frenchie(Character):
 
     def __init__( self , name , strength, speed, health):
         super().__init__(name, strength, speed, health)
-        self.name = name
-        self.strength = strength
-        self.speed = speed
-        self.health = health
+        
     
     def Info(self):
         print(f"***** (self.name) *****")
@@ -14,3 +13,4 @@ class Frenchie:
         return self
 
 p1 = Frenchie(name="Barnibuss",strength=18,speed=18,health=100)
+print(p1.show_stats())
