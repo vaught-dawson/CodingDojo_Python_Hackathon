@@ -1,6 +1,9 @@
-class Mermaid:
+from character import Character
 
-    def __init__( self , name, strength = 30, speed = 5, health = 100 ):
+
+class Mermaid(Character):
+    def __init__( self , name, strength, speed, health):
+        super().__init__( self , name, strength, speed, health):
         self.name = name
         self.strength = strength
         self.speed = speed
@@ -9,18 +12,23 @@ class Mermaid:
     def show_stats( self ):
         print(f"Name: {self.name}\nStrength: {self.strength}\nSpeed: {self.speed}\nHealth: {self.health}\n")
 
-    def attack( self , nereid ):
-        ninja.health -= self.strength
-        pirate.health -= self.strength
+    def attack( self , mermaid ):
+        frenchie.health -= self.strength
+        bruiser.health -= self.strength
         print(self.strength)
         return self
     
-    def sea_call( self, nereid):
+    def sea_call():
         pass # adds strength
     
     def swim_fast():
-        pass # boosts up speed 
+        if health is < 30
+            self.health += 50
+            
+    def back_slap():
+        pass
+             
     
-ceto = Mermaid("Ceto", strength=50, health = 200)
+ceto = Mermaid("Ceto", strength=21, speed = 20, health = 5000)
 
 ceto.attack()
