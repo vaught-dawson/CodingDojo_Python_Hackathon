@@ -3,10 +3,6 @@ from character import Character
 class Bruiser(Character):
     def __init__(self, name, strength, speed, health):
         super().__init__(name, strength, speed, health)
-        self.name = name
-        self.strength = strength
-        self.speed = speed
-        self.health = health
 
     def Info(self):
         print(f"******  {self.name}  ******")
