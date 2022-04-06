@@ -6,9 +6,14 @@ class Bruiser(Character):
 
     def __init__(self, name):
         strength = random.randint(16, 24)
-        speed = random.randint(16,20)
+        speed = random.randint(16, 20)
         health = random.randint(90, 120)
         super().__init__(name, strength, speed, health)
+        self.all_abilities['Body Slam'] = self.body_slam
+        self.all_abilities['Heavy Fist'] = self.heavy_fist
+        self.all_abilities[
+            'Attitude Adjustment'] = self.attitude_adjustment
+        self.all_abilities['Blood Thirsty'] = self.blood_thirsty
 
     def info(self):
         print(f"******  {self.name}  ******")
@@ -21,11 +26,12 @@ class Bruiser(Character):
         print(f'{self.name} used body slam on {victim.name}!')
         self.attack(victim)
 
-    def heavy_fist (self, victim):
+    def heavy_fist(self, victim):
         print(f'{self.name} uses a heavy fist on {victim.name}')
         increased_strength = Character.roll_d20()
         self.strength += increased_strength
-        print(f'(Increased attack strength my {increased_strength} for this turn)')
+        print(
+            f'(Increased attack strength my {increased_strength} for this turn)')
         self.attack(victim)
         self.strength -= increased_strength
 
@@ -34,5 +40,3 @@ class Bruiser(Character):
 
     def blood_thirsty(self, victim):
         print(f'{self.name} used bloodthirsty on {victim.name}')
-
-

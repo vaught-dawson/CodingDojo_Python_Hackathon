@@ -38,3 +38,17 @@ while is_invalid_class:
             print('Please enter a valid class name or number!')
 
 e1 = Enemy()
+
+print(f'Enemy {e1.name} has appeared!')
+still_alive = True
+while still_alive:
+    print('Abilities:')
+    invalid_move = True
+    while invalid_move:
+        abilities = player_object.all_abilities
+        for ability in abilities:
+            print(f'- {ability}')
+        input_ability = input('What ability would you like to use?\n')
+        if abilities.get(input_ability) != None:
+            player_object.all_abilities[input_ability](e1)
+            invalid_move = False

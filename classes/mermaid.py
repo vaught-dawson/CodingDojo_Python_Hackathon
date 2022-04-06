@@ -3,12 +3,16 @@ from classes.character import Character
 
 
 class Mermaid(Character):
-    
+
     def __init__(self, name):
         strength = random.randint(20, 24)
         speed = random.randint(15, 23)
         health = random.randint(90, 150)
         super().__init__(name, strength, speed, health)
+        self.all_abilities['Sea Call'] = self.sea_call
+        self.all_abilities['Shimmer'] = self.shimmer
+        self.all_abilities['Tail Slap'] = self.tail_slap
+        self.all_abilities['Basic Attack'] = self.attack
 
     def show_stats(self):
         print(
@@ -22,13 +26,15 @@ class Mermaid(Character):
         if self.health < 20:
             self.health += 50
         victim.health -= 30
-        print(f"Poseidon blessed you with {self.health} points of health \n Poseidon: {victim.name} how dare you hurt my {self.name}! \n {victim.name} was dealt 30 points of damage")
+        print(
+            f"Poseidon blessed you with {self.health} points of health \n Poseidon: {victim.name} how dare you hurt my {self.name}! \n {victim.name} was dealt 30 points of damage")
         return self
 
     def shimmer(self):
         if self.health < 10:
             self.speed += 80
-        print(f"You shimmer like the sparkly ocean ;) {self.speed} points on speed!")
+        print(
+            f"You shimmer like the sparkly ocean ;) {self.speed} points on speed!")
         return self
 
     def tail_slap(self, victim):

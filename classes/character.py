@@ -3,6 +3,8 @@ import random
 
 
 class Character:
+    all_abilities = {}
+
     def __init__(self, name, strength, speed, health):
         self.name = name
         self.strength = strength

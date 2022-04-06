@@ -9,9 +9,9 @@ class Enemy:
         self.create_random_enemy()
 
     def create_random_enemy(self):
-        rand_name = self.get_random_name()
+        self.name = self.get_random_name()
         rand_class = self.choose_random_class()
-        self.class_type = rand_class(rand_name)
+        self.class_type = rand_class(self.name)
         self.class_type.info()
 
     @staticmethod

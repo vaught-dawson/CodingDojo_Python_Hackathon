@@ -9,6 +9,10 @@ class Frenchie(Character):
         speed = random.randint(18, 24)
         health = random.randint(80, 120)
         super().__init__(name, strength, speed, health)
+        self.all_abilities['Lick to Death'] = self.lick_to_death
+        self.all_abilities['Fart Cloud'] = self.fart_cloud
+        self.all_abilities['Zoomies'] = self.zoomies
+        self.all_abilities['Bite Leg Off'] = self.bite_leg_off
 
     def info(self):
         print(f"***** (self.name) *****")
@@ -16,19 +20,18 @@ class Frenchie(Character):
         print(f"Speed: (self.speed")
         return self
 
-    def lick_to_death(self,victim):
+    def lick_to_death(self, victim):
         print(f"{self.name} use lick to death {victim.name}!")
         self.attack(victim)
 
-    def fart_cloud(self,victim):
+    def fart_cloud(self, victim):
         print(f"{self.name} use fart cloud on {victim.name}")
         self.attack(victim)
 
-    def zoomies(self,victim):
+    def zoomies(self, victim):
         print(f"{self.name} use zoomies on {victim.name}")
         self.attack(victim)
 
-    def bite_leg_off(self,victim):
+    def bite_leg_off(self, victim):
         print(f"{self.name} use bite leg off on {victim.name}")
         self.attack(victim)
-
