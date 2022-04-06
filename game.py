@@ -45,9 +45,8 @@ still_alive = True
 while still_alive:
     print('Abilities:')
     invalid_move = True
-    # Loop to do check valid ability choice (Unfinished)
+    # Loop to do check valid ability choice (Abilities are unfinished)
     while invalid_move:
-        # Accidentally used global static variable
         abilities = player_object.abilities
         for ability in abilities:
             print(f'- {ability}')
