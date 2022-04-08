@@ -26,6 +26,8 @@ class Mermaid(Character):
 
     def attack(self, victim):
         victim.class_name.health -= self.strength
+        print(
+            f"{self.name} hits you with a glorious back hand \n{victim.name} suffers {self.strength} of damage")
         return self
 
     def sea_call(self, victim):
