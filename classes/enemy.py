@@ -6,13 +6,12 @@ from classes.mermaid import Mermaid
 
 class Enemy:
     def __init__(self):
-        self.create_random_enemy()
-
-    def create_random_enemy(self):
         self.name = self.get_random_name()
         rand_class = self.choose_random_class()
-        self.class_type = rand_class(self.name)
-        self.class_type.show_stats()
+        self.class_name = rand_class(self.name)
+
+    def show_self(self):
+        return self
 
     @staticmethod
     def get_random_name():

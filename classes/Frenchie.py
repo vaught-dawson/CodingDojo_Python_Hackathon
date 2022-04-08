@@ -12,6 +12,7 @@ class Frenchie(Character):
         super().__init__(name, strength, speed, health)
         if not self.abilities:
             self.add_abilities()
+        self.class_name = 'Frenchie'
 
     def add_abilities(self):
         self.abilities['Lick to Death'] = self.lick_to_death

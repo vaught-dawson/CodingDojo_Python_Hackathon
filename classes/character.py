@@ -19,20 +19,22 @@ class Character:
         return self
 
     def attack(self, victim):
-        attack_roll = Character.roll_d20() + self.get_stat_bonus(self.speed)
-        defense_roll = Character.roll_d20() + victim.get_stat_bonus(victim.speed)
-        print(f'{self.name} attacks {victim.name}')
+        attack_roll = Character.roll_d20() + Character.get_stat_bonus(self.speed)
+        defense_roll = Character.roll_d20() + Character.get_stat_bonus(victim.class_name.speed)
         if attack_roll > defense_roll:
             print(
                 f'{self.name}\'s attack of {attack_roll} beats {victim.name}\'s defense of {defense_roll}')
-            damage = Character.roll_d20() + self.get_stat_bonus(self.strength)
-            victim.change_health(-damage)
+            damage = Character.roll_d20() + Character.get_stat_bonus(self.strength)
+            victim.class_name.change_health(-damage)
             print(
-                f'{victim.name} takes {damage} damage! {victim.health} health remaining')
+                f'{victim.name} takes {damage} damage! {victim.class_name.health} health remaining')
         else:
             print(
                 f'{victim.name} wards off the attack from {self.name}! ({attack_roll} attack vs {defense_roll} defense)')
         return self
+
+    def is_alive(self):
+        return self.health > 0
 
     @staticmethod
     def get_stat_bonus(stat):

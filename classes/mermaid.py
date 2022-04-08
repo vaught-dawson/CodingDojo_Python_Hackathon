@@ -12,6 +12,7 @@ class Mermaid(Character):
         super().__init__(name, strength, speed, health)
         if not self.abilities:
             self.add_abilities()
+        self.class_name = 'Mermaid'
 
     def add_abilities(self):
         self.abilities['Sea Call'] = self.sea_call
@@ -24,18 +25,18 @@ class Mermaid(Character):
             f"Name: {self.name}\nStrength: {self.strength}\nSpeed: {self.speed}\nHealth: {self.health}\n")
 
     def attack(self, victim):
-        victim.health -= self.strength
+        victim.class_name.health -= self.strength
         return self
 
     def sea_call(self, victim):
         if self.health < 20:
             self.health += 50
-        victim.health -= 30
+        victim.class_name.health -= 30
         print(
-            f"Poseidon blessed you with {self.health} points of health \n Poseidon: {victim.name} how dare you hurt my {self.name}! \n {victim.name} was dealt 30 points of damage")
+            f"Poseidon blessed you with {self.health} points of health \nPoseidon: {victim.name} how dare you hurt my {self.name}! \n{victim.name} was dealt 30 points of damage")
         return self
 
-    def shimmer(self):
+    def shimmer(self, victim):
         if self.health < 10:
             self.speed += 80
         print(
@@ -45,7 +46,7 @@ class Mermaid(Character):
     def tail_slap(self, victim):
         if self.health <= 30:
             self.strength += 40
-            victim.health -= self.strength
+            victim.class_name.health -= self.strength
         print(f"{self.name} uses her glorious tail to slap {victim.name} on the face!")
         return self
 

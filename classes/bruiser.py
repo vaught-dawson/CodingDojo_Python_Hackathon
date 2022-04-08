@@ -12,6 +12,7 @@ class Bruiser(Character):
         super().__init__(name, strength, speed, health)
         if not self.abilities:
             self.add_abilities()
+        self.class_name = 'Bruiser'
 
     def add_abilities(self):
         self.abilities['Body Slam'] = self.body_slam
